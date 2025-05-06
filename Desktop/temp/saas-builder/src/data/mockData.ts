@@ -1,0 +1,203 @@
+import { SaasBlueprint } from '../types';
+
+export const mockData: SaasBlueprint = {
+  idea: {
+    name: 'TaskFlow',
+    description: 'A project management tool designed for small teams with built-in AI assistance for task prioritization and time estimation.',
+    targetAudience: 'Small business teams and startups',
+  },
+  pillars: [
+    {
+      name: 'Market Demand',
+      description: 'Assesses the level of demand for your SaaS solution in the target market.',
+      score: 8,
+      suggestions: ['Consider adding integrations with popular tools like Slack and GitHub.'],
+    },
+    {
+      name: 'Unique Value Proposition',
+      description: 'Evaluates how your SaaS solution stands out from competitors.',
+      score: 7,
+      suggestions: ['Emphasize AI-powered time estimation as a key differentiator.', 'Consider adding personalized AI recommendations.'],
+    },
+    {
+      name: 'Monetization Potential',
+      description: 'Analyzes how effectively the SaaS idea can be monetized.',
+      score: 9,
+      suggestions: ['Consider offering enterprise features for larger teams.'],
+    },
+    {
+      name: 'Technical Feasibility',
+      description: 'Assesses the technical complexity and feasibility of implementing your SaaS.',
+      score: 8,
+      suggestions: ['Start with simpler AI features and expand gradually.'],
+    },
+    {
+      name: 'Scalability',
+      description: 'Evaluates how well the SaaS solution can scale with growing user base.',
+      score: 7,
+      suggestions: ['Plan for database sharding early to handle growth.', 'Consider implementing caching strategy.'],
+    },
+    {
+      name: 'User Retention',
+      description: 'Analyzes potential for long-term user engagement and retention.',
+      score: 6,
+      suggestions: ['Add achievement system for completed tasks.', 'Implement periodic progress reports.'],
+    },
+  ],
+  techStack: [
+    {
+      category: 'Frontend',
+      name: 'React with TypeScript',
+      description: 'For building a type-safe, component-based UI with excellent developer experience.',
+    },
+    {
+      category: 'Backend',
+      name: 'Node.js with Express',
+      description: 'Lightweight, high-performance server with JavaScript throughout the stack.',
+    },
+    {
+      category: 'Database',
+      name: 'PostgreSQL',
+      description: 'Robust relational database for structured data with excellent JSON support.',
+    },
+    {
+      category: 'Authentication',
+      name: 'Auth0',
+      description: 'Secure, flexible authentication with social login options.',
+    },
+    {
+      category: 'Deployment',
+      name: 'Docker & Kubernetes',
+      description: 'Containerization for consistent environments and scalable orchestration.',
+    },
+    {
+      category: 'AI Services',
+      name: 'TensorFlow.js',
+      description: 'For client-side ML models to handle task prioritization algorithms.',
+    },
+  ],
+  coreFeatures: [
+    {
+      id: 'feature-1',
+      title: 'Task Management',
+      description: 'Create, assign, and track tasks with deadlines and priorities.',
+      priority: 'high',
+    },
+    {
+      id: 'feature-2',
+      title: 'AI Time Estimation',
+      description: 'Intelligent estimation of task completion time based on historical data.',
+      priority: 'medium',
+    },
+    {
+      id: 'feature-3',
+      title: 'Team Collaboration',
+      description: 'Comment threads, @mentions, and file sharing on tasks.',
+      priority: 'high',
+    },
+    {
+      id: 'feature-4',
+      title: 'Project Analytics',
+      description: 'Visual reports on team productivity, bottlenecks, and project progress.',
+      priority: 'medium',
+    },
+    {
+      id: 'feature-5',
+      title: 'Calendar Integration',
+      description: 'Sync tasks with Google Calendar and Outlook.',
+      priority: 'low',
+    },
+  ],
+  userFlow: {
+    nodes: [
+      { id: 'node-1', type: 'page', label: 'Login Page', x: 100, y: 100 },
+      { id: 'node-2', type: 'page', label: 'Dashboard', x: 250, y: 100 },
+      { id: 'node-3', type: 'action', label: 'Create Task', x: 400, y: 50 },
+      { id: 'node-4', type: 'page', label: 'Task Detail', x: 400, y: 150 },
+      { id: 'node-5', type: 'decision', label: 'Assign Task?', x: 550, y: 50 },
+      { id: 'node-6', type: 'page', label: 'Team Members', x: 700, y: 50 },
+      { id: 'node-7', type: 'action', label: 'Add Comment', x: 550, y: 150 },
+      { id: 'node-8', type: 'page', label: 'Analytics', x: 250, y: 200 },
+    ],
+    edges: [
+      { id: 'edge-1', source: 'node-1', target: 'node-2', label: 'Login' },
+      { id: 'edge-2', source: 'node-2', target: 'node-3', label: 'New Task' },
+      { id: 'edge-3', source: 'node-2', target: 'node-4', label: 'View Task' },
+      { id: 'edge-4', source: 'node-3', target: 'node-5' },
+      { id: 'edge-5', source: 'node-5', target: 'node-6', label: 'Yes' },
+      { id: 'edge-6', source: 'node-4', target: 'node-7' },
+      { id: 'edge-7', source: 'node-2', target: 'node-8', label: 'View Reports' },
+    ],
+  },
+  kanbanTickets: [
+    {
+      id: 'ticket-1',
+      title: 'Create task UI',
+      description: 'Implement the form for creating new tasks with all required fields',
+      status: 'done',
+      priority: 'high',
+      feature: 'Task Management',
+    },
+    {
+      id: 'ticket-2',
+      title: 'Implement task assignment',
+      description: 'Add ability to assign tasks to team members with notifications',
+      status: 'inProgress',
+      priority: 'high',
+      feature: 'Task Management',
+    },
+    {
+      id: 'ticket-3',
+      title: 'Design AI estimation algorithm',
+      description: 'Research and design the algorithm for estimating task completion time',
+      status: 'inProgress',
+      priority: 'medium',
+      feature: 'AI Time Estimation',
+    },
+    {
+      id: 'ticket-4',
+      title: 'Implement comment system',
+      description: 'Create comment thread functionality with markdown support',
+      status: 'todo',
+      priority: 'high',
+      feature: 'Team Collaboration',
+    },
+    {
+      id: 'ticket-5',
+      title: 'Build analytics dashboard',
+      description: 'Create visualizations for team productivity and project progress',
+      status: 'todo',
+      priority: 'medium',
+      feature: 'Project Analytics',
+    },
+    {
+      id: 'ticket-6',
+      title: 'Set up Google Calendar API',
+      description: 'Configure OAuth and implement API calls for calendar integration',
+      status: 'todo',
+      priority: 'low',
+      feature: 'Calendar Integration',
+    },
+  ],
+  pricingModel: [
+    {
+      name: 'Free',
+      price: 0,
+      features: ['Up to 5 users', 'Basic task management', 'Limited file storage (100MB)'],
+      recommended: false,
+    },
+    {
+      name: 'Pro',
+      price: 12,
+      features: ['Up to 20 users', 'AI time estimation', 'Advanced analytics', '5GB file storage', 'Priority support'],
+      recommended: true,
+    },
+    {
+      name: 'Enterprise',
+      price: 29,
+      features: ['Unlimited users', 'Custom integrations', 'Dedicated support', '20GB file storage', 'SSO authentication'],
+      recommended: false,
+    },
+  ],
+  validationScore: 75,
+};
